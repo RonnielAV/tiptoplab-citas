@@ -5,25 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programar Cita - Tip Top Lab</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-    <header>
-        <div class="logo-container">
-            <a href="https://www.instagram.com/tiptoplab/" target="_blank" rel="noopener">
-                <img src="tiptop-logo.jpg" alt="Tip Top Lab Logo" class="logo-img">
-            </a>
-            <h1>Tip Top Lab</h1>
-            
-        </div>
-        <div id="user-info-header">
-            <span><i class="fas fa-calendar-check"></i> Programación de Citas</span>
-        </div>
-    </header>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="tiptop-logo.png" type="image/png"> </head>
+    <body>
+        <header>
+            <div class="logo-container">
+                <a href="https://www.instagram.com/tiptoplab/" target="_blank" rel="noopener" aria-label="Visita nuestra página de Instagram">
+                    <img src="tiptop-logo.png" alt="Tip Top Lab Logo" class="logo-img">
+                </a>
+                <h1>Tip Top Lab</h1>
+            </div>
+            <div id="user-info-header">
+                <span><i class="fas fa-calendar-check" aria-hidden="true"></i> Programación de Citas</span>
+            </div>
+        </header>
 
     <main>
         <h2>Solicitar una Cita</h2>
-        
+
         <div class="steps">
             <div class="step completed" data-step="1">
                 <span class="step-number">1</span>
@@ -44,97 +43,94 @@
         </div>
 
         <form id="appointment-form" class="compact-form">
-            <!-- Paso 1: Selección de Servicios -->
             <div class="step-content active" id="step-1">
-                <h3 class="h3-servicios">Selecciona el servicio que deseas</h3>
-                
+                <h3 class="step-title">Paso 1: Selecciona el servicio que deseas</h3>
+
                 <div class="services-grid">
-                    <div class="service-card" data-service-id="1">
-                        <div class="service-icon"><i class="fas fa-spa"></i></div>
+                    <div class="service-card" data-service-id="1" tabindex="0" role="button" aria-pressed="false">
+                        <div class="service-icon"><i class="fas fa-spa" aria-hidden="true"></i></div>
                         <div class="service-name">Manicura Básica</div>
                     </div>
-                    
-                    <div class="service-card" data-service-id="2">
-                        <div class="service-icon"><i class="fas fa-gem"></i></div>
+
+                    <div class="service-card" data-service-id="2" tabindex="0" role="button" aria-pressed="false">
+                        <div class="service-icon"><i class="fas fa-gem" aria-hidden="true"></i></div>
                         <div class="service-name">Manicura Gel</div>
                     </div>
-                    
-                    <div class="service-card" data-service-id="3">
-                        <div class="service-icon"><i class="fas fa-shoe-prints"></i></div>
+
+                    <div class="service-card" data-service-id="3" tabindex="0" role="button" aria-pressed="false">
+                        <div class="service-icon"><i class="fas fa-shoe-prints" aria-hidden="true"></i></div>
                         <div class="service-name">Pedicura</div>
                     </div>
-                    
-                    <div class="service-card" data-service-id="4">
-                        <div class="service-icon"><i class="fas fa-smile"></i></div>
+
+                    <div class="service-card" data-service-id="4" tabindex="0" role="button" aria-pressed="false">
+                        <div class="service-icon"><i class="fas fa-smile" aria-hidden="true"></i></div>
                         <div class="service-name">Facial Completo</div>
                     </div>
                 </div>
-                
+
                 <div class="navigation-buttons">
-                    <div></div>
-                    <button type="button" class="next-button" data-next="2">Continuar <i class="fas fa-arrow-right"></i></button>
+                    <div></div> <button type="button" class="next-button" data-next="2">Continuar <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
                 </div>
             </div>
-            
-            <!-- Paso 2: Selección de Fecha y Hora -->
+
             <div class="step-content" id="step-2">
-                <h3>Selecciona fecha y hora</h3>
-                
+                <h3 class="step-title">Paso 2: Selecciona fecha y hora</h3>
+
                 <div class="form-row">
                     <div>
                         <label for="appointment-date">Fecha:</label>
                         <input type="date" id="appointment-date" name="appointment-date" required>
                     </div>
                 </div>
-                
-                <div>
-                    <label>Horarios disponibles:</label>
-                    <div class="time-slots" id="time-slots-container"></div>
+                <div id="selected-time-display" class="selected-time-info" style="display: none;">
+                    Hora seleccionada: <span id="chosen-time"></span>
                 </div>
-                
+                <div>
+                    <label for="time-slots-container">Horarios disponibles:</label> <div class="time-slots" id="time-slots-container" role="radiogroup" aria-labelledby="time-slots-label">
+                        </div>
+                </div>
+
                 <div class="navigation-buttons">
-                    <button type="button" class="back-button" data-back="1"><i class="fas fa-arrow-left"></i> Atrás</button>
-                    <button type="button" class="next-button" data-next="3">Continuar <i class="fas fa-arrow-right"></i></button>
+                    <button type="button" class="back-button" data-back="1"><i class="fas fa-arrow-left" aria-hidden="true"></i> Atrás</button>
+                    <button type="button" class="next-button" data-next="3">Continuar <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
                 </div>
             </div>
-            
-            <!-- Paso 3: Información del Cliente -->
+
             <div class="step-content" id="step-3">
-                <h3>Tus datos personales</h3>
-                
+                <h3 class="step-title">Paso 3: Tus datos personales</h3>
+
                 <div class="form-row">
                     <div>
                         <label for="client-name">Nombre completo:</label>
-                        <input type="text" id="client-name" name="client-name" required>
+                        <input type="text" id="client-name" name="client-name" required autocomplete="name">
                     </div>
                 </div>
-                
+
                 <div class="form-row">
                     <div>
                         <label for="client-phone">Teléfono:</label>
-                        <input type="tel" id="client-phone" name="client-phone" required maxlength="10" pattern="[0-9]{10}" placeholder="Ej: 8091234567">
+                        <input type="tel" id="client-phone" name="client-phone" required maxlength="10" pattern="[0-9]{10}" placeholder="Ej: 8091234567" autocomplete="tel">
                     </div>
                     <div>
                         <label for="client-email">Correo electrónico:</label>
-                        <input type="email" id="client-email" name="client-email" required>
+                        <input type="email" id="client-email" name="client-email" required autocomplete="email">
                     </div>
                 </div>
-                
+
                 <div>
                     <label for="client-notes">Notas adicionales (opcional):</label>
                     <textarea id="client-notes" name="client-notes" rows="3"></textarea>
                 </div>
-                
+
                 <div class="navigation-buttons">
-                    <button type="button" class="back-button" data-back="2"><i class="fas fa-arrow-left"></i> Atrás</button>
-                    <button type="button" class="next-button" data-next="4">Revisar y Confirmar <i class="fas fa-arrow-right"></i></button>
+                    <button type="button" class="back-button" data-back="2"><i class="fas fa-arrow-left" aria-hidden="true"></i> Atrás</button>
+                    <button type="button" class="next-button" data-next="4">Revisar y Confirmar <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
                 </div>
             </div>
-            
-            <!-- Paso 4: Confirmación -->
+
             <div class="step-content" id="step-4">
-                <h3>Confirma tu cita</h3>
-                
+                <h3 class="step-title">Paso 4: Confirma tu cita</h3>
+
                 <div class="confirmation-details">
                     <p><strong>Servicio:</strong> <span id="confirm-service"></span></p>
                     <p><strong>Fecha:</strong> <span id="confirm-date"></span></p>
@@ -144,26 +140,24 @@
                     <p><strong>Email:</strong> <span id="confirm-email"></span></p>
                     <p><strong>Notas:</strong> <span id="confirm-notes"></span></p>
                 </div>
-                
+
                 <div class="navigation-buttons">
-                    <button type="button" class="back-button" data-back="3"><i class="fas fa-arrow-left"></i> Atrás</button>
-                    <button type="submit" id="confirm-button">Confirmar Cita <i class="fas fa-check"></i></button>
+                    <button type="button" class="back-button" data-back="3"><i class="fas fa-arrow-left" aria-hidden="true"></i> Atrás</button>
+                    <button type="submit" id="confirm-button">Confirmar Cita <i class="fas fa-check" aria-hidden="true"></i></button>
                 </div>
             </div>
         </form>
-        
-        <!-- Mensaje de éxito -->
+
         <div id="success-message" style="display: none;">
             <div class="success-content">
-                <i class="fas fa-check-circle"></i>
-                <h3>¡Tu cita ha sido solicitada con éxito!</h3>
-                <p>Le estaremos contactando para confirmar la cita.</p>
+                <i class="fas fa-check-circle fa-3x" aria-hidden="true"></i> <h3>¡Tu cita ha sido solicitada con éxito!</h3>
+                <p>Nos pondremos en contacto contigo pronto para confirmar todos los detalles.</p>
                 <div class="contact-icons">
-                    <a href="https://wa.me/18096429619" target="_blank" rel="noopener" class="whatsapp-icon" title="Contactar por WhatsApp">
-                        <i class="fab fa-whatsapp"></i>
+                    <a href="https://wa.me/18096429619" target="_blank" rel="noopener" class="whatsapp-icon" title="Contactar por WhatsApp" aria-label="Contactar por WhatsApp">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
                     </a>
-                    <a href="https://www.instagram.com/tiptoplab/" target="_blank" rel="noopener" class="instagram-icon" title="Contactar por Instagram">
-                        <i class="fab fa-instagram"></i>
+                    <a href="https://www.instagram.com/tiptoplab/" target="_blank" rel="noopener" class="instagram-icon" title="Visitar Instagram" aria-label="Visitar nuestra página de Instagram">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
                     </a>
                 </div>
                 <button id="new-appointment">Solicitar otra cita</button>
@@ -174,9 +168,10 @@
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
       (function(){
-        emailjs.init('Zubsfw8-Gl_-MDiPW');
+        // Reemplaza con tu Public Key de EmailJS
+        emailjs.init({ publicKey: 'Zubsfw8-Gl_-MDiPW' });
       })();
     </script>
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
