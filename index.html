@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
-<<head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programar Cita - Tip Top Lab</title>
     <link rel="stylesheet" href="styles.css">
-
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" defer></script>
-
-    </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
 <body>
     <header>
         <div class="logo-container">
@@ -16,7 +14,6 @@
                 <img src="tiptop-logo.jpg" alt="Tip Top Lab Logo" class="logo-img">
             </a>
             <h1>Tip Top Lab</h1>
-            
         </div>
         <div id="user-info-header">
             <span><i class="fas fa-calendar-check"></i> Programación de Citas</span>
@@ -46,10 +43,9 @@
         </div>
 
         <form id="appointment-form" class="compact-form">
-            <!-- Paso 1: Selección de Servicios -->
             <div class="step-content active" id="step-1">
                 <h3 class="h3-servicios">Selecciona el servicio que deseas</h3>
-            
+                
                 <div class="services-grid">
                     <div class="service-card" data-service-id="1">
                         <div class="service-icon">
@@ -57,70 +53,69 @@
                         </div>
                         <div class="service-name">Manicure</div>
                     </div>
-            
+                    
                     <div class="service-card" data-service-id="2">
                         <div class="service-icon">
                             <img src="iconos/icons8-pedicure-48.png" alt="Pedicura">
                         </div>
                         <div class="service-name">Pedicure</div>
                     </div>
-            
+                    
                     <div class="service-card" data-service-id="3">
                         <div class="service-icon">
                             <img src="iconos/icons8-acrilico-80.png" alt="Acrílico">
                         </div>
                         <div class="service-name">Acrílico</div>
                     </div>
-            
+
                     <div class="service-card" data-service-id="4">
                         <div class="service-icon">
                             <img src="iconos/icons8-resina-64.png" alt="Resina">
                         </div>
                         <div class="service-name">Resina</div>
                     </div>
-            
+
                     <div class="service-card" data-service-id="5">
                         <div class="service-icon">
                             <img src="iconos/icons8-builder-64.png" alt="Builder">
                         </div>
                         <div class="service-name">Builder</div>
                     </div>
-            
+
                     <div class="service-card" data-service-id="6">
                         <div class="service-icon">
                             <img src="iconos/icons8-retoque-78.png" alt="Retoque">
                         </div>
                         <div class="service-name">Retoque</div>
                     </div>
-            
+                    
                     <div class="service-card" data-service-id="7">
                         <div class="service-icon">
                             <img src="iconos/icons8-maquillaje-60.png" alt="Maquillaje">
                         </div>
                         <div class="service-name">Maquillaje</div>
                     </div>
-            
+
                     <div class="service-card" data-service-id="8">
                         <div class="service-icon">
                             <img src="iconos/icons8-Cejas Brow Henna-66.png" alt="Cejas Brow Henna">
                         </div>
                         <div class="service-name">Cejas Brow Henna</div>
                     </div>
-            
+                    
                     <div class="service-card" data-service-id="9">
                         <div class="service-icon">
                             </div>
                         <div class="service-name">Otros</div>
                     </div>
-                </div> <div class="navigation-buttons">
+                </div>
+                
+                <div class="navigation-buttons">
                     <div></div>
-                    <button type="button" class="next-button" data-next="2">
-                        Continuar
-                        <i class="fas fa-arrow-right"></i> </button>
+                    <button type="button" class="next-button" data-next="2">Continuar <i class="fas fa-arrow-right"></i></button>
                 </div>
             </div>
             
-            <!-- Paso 2: Selección de Fecha y Hora -->
             <div class="step-content" id="step-2">
                 <h3>Selecciona fecha y hora</h3>
                 
@@ -142,20 +137,19 @@
                 </div>
             </div>
             
-            <!-- Paso 3: Información del Cliente -->
             <div class="step-content" id="step-3">
                 <h3>Tus datos personales</h3>
-            
+                
                 <div class="form-row">
                     <div>
                         <label for="client-name">Nombre completo:</label>
                         <input type="text" id="client-name" name="client-name" required>
                     </div>
                 </div>
-            
+                
                 <div class="form-row">
                     <div>
-                        <label for="client-phone">Teléfono (Celular):</label>
+                        <label for="client-phone">Teléfono:</label>
                         <input type="tel" id="client-phone" name="client-phone" required maxlength="10" pattern="[0-9]{10}" placeholder="Ej: 8091234567">
                     </div>
                     <div>
@@ -163,19 +157,18 @@
                         <input type="email" id="client-email" name="client-email" required>
                     </div>
                 </div>
-            
+                
                 <div>
                     <label for="client-notes">Notas adicionales (opcional):</label>
                     <textarea id="client-notes" name="client-notes" rows="3" placeholder="Ej: Quiero un diseño de uñas francesas con esmalte rojo. / Favor confirmar si tienen disponibilidad para agregar un servicio de depilación de cejas."></textarea>
                 </div>
-            
+                
                 <div class="navigation-buttons">
                     <button type="button" class="back-button" data-back="2"><i class="fas fa-arrow-left"></i> Atrás</button>
                     <button type="button" class="next-button" data-next="4">Revisar y Confirmar <i class="fas fa-arrow-right"></i></button>
                 </div>
             </div>
             
-            <!-- Paso 4: Confirmación -->
             <div class="step-content" id="step-4">
                 <h3>Confirma tu cita</h3>
                 
@@ -196,14 +189,13 @@
             </div>
         </form>
         
-        <!-- Mensaje de éxito -->
         <div id="success-message" style="display: none;">
             <div class="success-content">
                 <i class="fas fa-check-circle"></i>
                 <h3>¡Tu cita ha sido solicitada con éxito!</h3>
                 <p>Le estaremos contactando para confirmar la cita.</p>
                 <div class="contact-icons">
-                    <a href="https://wa.me/18096429619" target="_blank" rel="noopener" class="whatsapp-icon" title="Contactar por WhatsApp">
+                    <a id="whatsapp-link-success" href="https://wa.me/18096429619" target="_blank" rel="noopener" class="whatsapp-icon" title="Contactar por WhatsApp">
                         <i class="fab fa-whatsapp"></i>
                     </a>
                     <a href="https://www.instagram.com/tiptoplab/" target="_blank" rel="noopener" class="instagram-icon" title="Contactar por Instagram">
@@ -218,9 +210,9 @@
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
       (function(){
-        emailjs.init('Zubsfw8-Gl_-MDiPW');
+        emailjs.init('Zubsfw8-Gl_-MDiPW'); // Reemplaza con tu User ID de EmailJS
       })();
     </script>
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
