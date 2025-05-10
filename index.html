@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programar Cita - Tip Top Lab</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="https://www.instagram.com/tiptoplab/" target="_blank" rel="noopener">
+                <img src="tiptop-logo.jpg" alt="Tip Top Lab Logo" class="logo-img">
+            </a>
+            <h1>Tip Top Lab</h1>
+            
+        </div>
+        <div id="user-info-header">
+            <span><i class="fas fa-calendar-check"></i> Programación de Citas</span>
+        </div>
+    </header>
+
+    <main>
+        <h2>Solicitar una Cita</h2>
+        
+        <div class="steps">
+            <div class="step completed" data-step="1">
+                <span class="step-number">1</span>
+                <span>Servicios</span>
+            </div>
+            <div class="step" data-step="2">
+                <span class="step-number">2</span>
+                <span>Fecha y Hora</span>
+            </div>
+            <div class="step" data-step="3">
+                <span class="step-number">3</span>
+                <span>Tus Datos</span>
+            </div>
+            <div class="step" data-step="4">
+                <span class="step-number">4</span>
+                <span>Confirmación</span>
+            </div>
+        </div>
+
+        <form id="appointment-form" class="compact-form">
+            <!-- Paso 1: Selección de Servicios -->
+            <div class="step-content active" id="step-1">
+                <h3 class="h3-servicios">Selecciona el servicio que deseas</h3>
+                
+                <div class="services-grid">
+                    <div class="service-card" data-service-id="1">
+                        <div class="service-icon"><i class="fas fa-spa"></i></div>
+                        <div class="service-name">Manicura Básica</div>
+                    </div>
+                    
+                    <div class="service-card" data-service-id="2">
+                        <div class="service-icon"><i class="fas fa-gem"></i></div>
+                        <div class="service-name">Manicura Gel</div>
+                    </div>
+                    
+                    <div class="service-card" data-service-id="3">
+                        <div class="service-icon"><i class="fas fa-shoe-prints"></i></div>
+                        <div class="service-name">Pedicura</div>
+                    </div>
+                    
+                    <div class="service-card" data-service-id="4">
+                        <div class="service-icon"><i class="fas fa-smile"></i></div>
+                        <div class="service-name">Facial Completo</div>
+                    </div>
+                </div>
+                
+                <div class="navigation-buttons">
+                    <div></div>
+                    <button type="button" class="next-button" data-next="2">Continuar <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            
+            <!-- Paso 2: Selección de Fecha y Hora -->
+            <div class="step-content" id="step-2">
+                <h3>Selecciona fecha y hora</h3>
+                
+                <div class="form-row">
+                    <div>
+                        <label for="appointment-date">Fecha:</label>
+                        <input type="date" id="appointment-date" name="appointment-date" required>
+                    </div>
+                </div>
+                
+                <div>
+                    <label>Horarios disponibles:</label>
+                    <div class="time-slots" id="time-slots-container"></div>
+                </div>
+                
+                <div class="navigation-buttons">
+                    <button type="button" class="back-button" data-back="1"><i class="fas fa-arrow-left"></i> Atrás</button>
+                    <button type="button" class="next-button" data-next="3">Continuar <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            
+            <!-- Paso 3: Información del Cliente -->
+            <div class="step-content" id="step-3">
+                <h3>Tus datos personales</h3>
+                
+                <div class="form-row">
+                    <div>
+                        <label for="client-name">Nombre completo:</label>
+                        <input type="text" id="client-name" name="client-name" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div>
+                        <label for="client-phone">Teléfono:</label>
+                        <input type="tel" id="client-phone" name="client-phone" required maxlength="10" pattern="[0-9]{10}" placeholder="Ej: 8091234567">
+                    </div>
+                    <div>
+                        <label for="client-email">Correo electrónico:</label>
+                        <input type="email" id="client-email" name="client-email" required>
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="client-notes">Notas adicionales (opcional):</label>
+                    <textarea id="client-notes" name="client-notes" rows="3"></textarea>
+                </div>
+                
+                <div class="navigation-buttons">
+                    <button type="button" class="back-button" data-back="2"><i class="fas fa-arrow-left"></i> Atrás</button>
+                    <button type="button" class="next-button" data-next="4">Revisar y Confirmar <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            
+            <!-- Paso 4: Confirmación -->
+            <div class="step-content" id="step-4">
+                <h3>Confirma tu cita</h3>
+                
+                <div class="confirmation-details">
+                    <p><strong>Servicio:</strong> <span id="confirm-service"></span></p>
+                    <p><strong>Fecha:</strong> <span id="confirm-date"></span></p>
+                    <p><strong>Hora:</strong> <span id="confirm-time"></span></p>
+                    <p><strong>Nombre:</strong> <span id="confirm-name"></span></p>
+                    <p><strong>Teléfono:</strong> <span id="confirm-phone"></span></p>
+                    <p><strong>Email:</strong> <span id="confirm-email"></span></p>
+                    <p><strong>Notas:</strong> <span id="confirm-notes"></span></p>
+                </div>
+                
+                <div class="navigation-buttons">
+                    <button type="button" class="back-button" data-back="3"><i class="fas fa-arrow-left"></i> Atrás</button>
+                    <button type="submit" id="confirm-button">Confirmar Cita <i class="fas fa-check"></i></button>
+                </div>
+            </div>
+        </form>
+        
+        <!-- Mensaje de éxito -->
+        <div id="success-message" style="display: none;">
+            <div class="success-content">
+                <i class="fas fa-check-circle"></i>
+                <h3>¡Tu cita ha sido solicitada con éxito!</h3>
+                <p>Le estaremos contactando para confirmar la cita.</p>
+                <div class="contact-icons">
+                    <a href="https://wa.me/18096429619" target="_blank" rel="noopener" class="whatsapp-icon" title="Contactar por WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.instagram.com/tiptoplab/" target="_blank" rel="noopener" class="instagram-icon" title="Contactar por Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <button id="new-appointment">Solicitar otra cita</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+      (function(){
+        emailjs.init('Zubsfw8-Gl_-MDiPW');
+      })();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html> 
