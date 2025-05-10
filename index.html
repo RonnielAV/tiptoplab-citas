@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+<<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programar Cita - Tip Top Lab</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" defer></script>
+
+    </head>
 <body>
     <header>
         <div class="logo-container">
@@ -47,32 +49,74 @@
             <!-- Paso 1: Selección de Servicios -->
             <div class="step-content active" id="step-1">
                 <h3 class="h3-servicios">Selecciona el servicio que deseas</h3>
-                
+            
                 <div class="services-grid">
                     <div class="service-card" data-service-id="1">
-                        <div class="service-icon"><i class="fas fa-spa"></i></div>
-                        <div class="service-name">Manicura Básica</div>
+                        <div class="service-icon">
+                            <img src="iconos/icons8-manicure-50.png" alt="Manicura">
+                        </div>
+                        <div class="service-name">Manicure</div>
                     </div>
-                    
+            
                     <div class="service-card" data-service-id="2">
-                        <div class="service-icon"><i class="fas fa-gem"></i></div>
-                        <div class="service-name">Manicura Gel</div>
+                        <div class="service-icon">
+                            <img src="iconos/icons8-pedicure-48.png" alt="Pedicura">
+                        </div>
+                        <div class="service-name">Pedicure</div>
                     </div>
-                    
+            
                     <div class="service-card" data-service-id="3">
-                        <div class="service-icon"><i class="fas fa-shoe-prints"></i></div>
-                        <div class="service-name">Pedicura</div>
+                        <div class="service-icon">
+                            <img src="iconos/icons8-acrilico-80.png" alt="Acrílico">
+                        </div>
+                        <div class="service-name">Acrílico</div>
                     </div>
-                    
+            
                     <div class="service-card" data-service-id="4">
-                        <div class="service-icon"><i class="fas fa-smile"></i></div>
-                        <div class="service-name">Facial Completo</div>
+                        <div class="service-icon">
+                            <img src="iconos/icons8-resina-64.png" alt="Resina">
+                        </div>
+                        <div class="service-name">Resina</div>
                     </div>
-                </div>
-                
-                <div class="navigation-buttons">
+            
+                    <div class="service-card" data-service-id="5">
+                        <div class="service-icon">
+                            <img src="iconos/icons8-builder-64.png" alt="Builder">
+                        </div>
+                        <div class="service-name">Builder</div>
+                    </div>
+            
+                    <div class="service-card" data-service-id="6">
+                        <div class="service-icon">
+                            <img src="iconos/icons8-retoque-78.png" alt="Retoque">
+                        </div>
+                        <div class="service-name">Retoque</div>
+                    </div>
+            
+                    <div class="service-card" data-service-id="7">
+                        <div class="service-icon">
+                            <img src="iconos/icons8-maquillaje-60.png" alt="Maquillaje">
+                        </div>
+                        <div class="service-name">Maquillaje</div>
+                    </div>
+            
+                    <div class="service-card" data-service-id="8">
+                        <div class="service-icon">
+                            <img src="iconos/icons8-Cejas Brow Henna-66.png" alt="Cejas Brow Henna">
+                        </div>
+                        <div class="service-name">Cejas Brow Henna</div>
+                    </div>
+            
+                    <div class="service-card" data-service-id="9">
+                        <div class="service-icon">
+                            </div>
+                        <div class="service-name">Otros</div>
+                    </div>
+                </div> <div class="navigation-buttons">
                     <div></div>
-                    <button type="button" class="next-button" data-next="2">Continuar <i class="fas fa-arrow-right"></i></button>
+                    <button type="button" class="next-button" data-next="2">
+                        Continuar
+                        <i class="fas fa-arrow-right"></i> </button>
                 </div>
             </div>
             
@@ -101,17 +145,17 @@
             <!-- Paso 3: Información del Cliente -->
             <div class="step-content" id="step-3">
                 <h3>Tus datos personales</h3>
-                
+            
                 <div class="form-row">
                     <div>
                         <label for="client-name">Nombre completo:</label>
                         <input type="text" id="client-name" name="client-name" required>
                     </div>
                 </div>
-                
+            
                 <div class="form-row">
                     <div>
-                        <label for="client-phone">Teléfono:</label>
+                        <label for="client-phone">Teléfono (Celular):</label>
                         <input type="tel" id="client-phone" name="client-phone" required maxlength="10" pattern="[0-9]{10}" placeholder="Ej: 8091234567">
                     </div>
                     <div>
@@ -119,12 +163,12 @@
                         <input type="email" id="client-email" name="client-email" required>
                     </div>
                 </div>
-                
+            
                 <div>
                     <label for="client-notes">Notas adicionales (opcional):</label>
-                    <textarea id="client-notes" name="client-notes" rows="3"></textarea>
+                    <textarea id="client-notes" name="client-notes" rows="3" placeholder="Ej: Quiero un diseño de uñas francesas con esmalte rojo. / Favor confirmar si tienen disponibilidad para agregar un servicio de depilación de cejas."></textarea>
                 </div>
-                
+            
                 <div class="navigation-buttons">
                     <button type="button" class="back-button" data-back="2"><i class="fas fa-arrow-left"></i> Atrás</button>
                     <button type="button" class="next-button" data-next="4">Revisar y Confirmar <i class="fas fa-arrow-right"></i></button>
